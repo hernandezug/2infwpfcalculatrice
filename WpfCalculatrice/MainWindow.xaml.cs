@@ -21,6 +21,9 @@ namespace WpfCalculatrice
     public partial class MainWindow : Window
     {
         private Addition addition;
+        private Soustraction soustraction;
+        private Multiplication mult;
+        private Division diviser;
         public MainWindow()
         {
             //constructeur de la clase
@@ -41,26 +44,75 @@ namespace WpfCalculatrice
                     addition.setVal2(dblNumber2);
                     lblReponse.Content = addition.Additionne();
                 }
-                else
-                {
-                    MessageBox.Show("Veuillez controler le format des nombres saisis!","Conversion",MessageBoxButton.OK,MessageBoxImage.Warning);
-                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Veuillez controler le format des nombres saisis!", "Conversion", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 
         private void btnSub_Click(object sender, RoutedEventArgs e)
         {
+            double dblNumber1;
+            double dblNumber2;
 
+            if (double.TryParse(tbxNombre1.Text, out dblNumber1))
+            {
+                if (double.TryParse(tbxNombre2.Text, out dblNumber2))
+                {
+                    addition.setVal1(dblNumber1);
+                    addition.setVal2(dblNumber2);
+                    lblReponse.Content = addition.Additionne();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Veuillez controler le format des nombres saisis!", "Conversion", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void btnMult_Click(object sender, RoutedEventArgs e)
         {
+            double dblNumber1;
+            double dblNumber2;
 
+            if (double.TryParse(tbxNombre1.Text, out dblNumber1))
+            {
+                if (double.TryParse(tbxNombre2.Text, out dblNumber2))
+                {
+                    addition.setVal1(dblNumber1);
+                    addition.setVal2(dblNumber2);
+                    lblReponse.Content = addition.Additionne();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Veuillez controler le format des nombres saisis!", "Conversion", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void btnDiv1_Click(object sender, RoutedEventArgs e)
         {
+            double dblNumber1;
+            double dblNumber2;
 
+            if (double.TryParse(tbxNombre1.Text, out dblNumber1))
+            {
+                if (double.TryParse(tbxNombre2.Text, out dblNumber2))
+                {
+                    addition.setVal1(dblNumber1);
+                    addition.setVal2(dblNumber2);
+                    lblReponse.Content = addition.Additionne();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Veuillez controler le format des nombres saisis!", "Conversion", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void tbxNombre1_TextChanged(object sender, TextChangedEventArgs e)
